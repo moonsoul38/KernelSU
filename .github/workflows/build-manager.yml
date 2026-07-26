@@ -2,7 +2,7 @@ name: Build Manager
 
 on:
   push:
-    branches: [ "main", "dev", "ci", "disable_gki_warning" ]
+    branches: [ "main", "dev", "ci" ]
     paths:
       - '.github/workflows/build-manager.yml'
       - '.github/workflows/build-lkm.yml'
@@ -32,6 +32,7 @@ on:
       - 'Cargo.lock'
       - 'Cargo.toml'
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   generate-key:
